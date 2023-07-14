@@ -1,5 +1,6 @@
 //#region Peticion
 
+
 const getCharacters = async () => {
   const pokemon = [];
   for (let i = 0; i < 150; i++) {
@@ -21,29 +22,35 @@ const mappedCharacters = (characters) => {
 
 const drawCharacters = (characters) => {
   const main$$ = document.querySelector(".main")
-  //console.log(characters);
   //main$$.innerHTML = "";
   for (const character of characters) {
     let characterFigure$$ = document.createElement("figure");
+    characterFigure$$.setAttribute("class", "main-figure");
     characterFigure$$.innerHTML = `
-      <h2>${character.name}</h2>
-      <img src="${character.image}" alt="${character.name}">
+      <div class="main-figure-container">
+        <h2>${character.name}</h2>
+        <img src="${character.image}" alt="${character.name}">
+      </div>
   `;
     main$$.appendChild(characterFigure$$);
     //console.log(character.image)
   }
 };
-//      <img src="${character.imagen}" alt="${character.name}">
+
 //#endregion
 
 //#region  init
+/*
+Funcion inicial donde ponemos todas las llamadas a funciones.
+Quedan dudas:
+*/
 
 const init = async () => {
-  const characters = await getCharacters();
+  const characters =  await getCharacters();
   const mappeCharacter = mappedCharacters(characters);
-  drawCharacters(mappeCharacter)
-  //drawInput(mappeCharacter)
+  drawCharacters(mappeCharacter);
 };
+
 init();
 
 //#endregion

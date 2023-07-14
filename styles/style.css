@@ -4,16 +4,24 @@
   box-sizing: border-box;
 }
 
-/*
-Variables tipicas
-se crean con $nombre: valor
-*/
 .header {
   background-color: red;
 }
 
 .main {
-  background-color: purple;
+  background-color: #ddd3d3;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+.main-figure {
+  width: 30%;
+}
+.main-figure-container {
+  background-color: red;
+  width: 80%;
+  justify-items: center;
 }
 
 .footer {
