@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+Variables tipicas
+se crean con $nombre: valor
+*/
+.header {
+  background-color: red;
+}
+
+.main {
+  background-color: purple;
+}
+
+.footer {
+  background-color: lime;
+}/*# sourceMappingURL=style.css.map */
