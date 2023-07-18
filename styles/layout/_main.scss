@@ -3,14 +3,9 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
   
     &-figure {
-      width: 30%;
-      &-container{
-        background-color: red;
-        width: 80%;
-        justify-items: center;
-      }
+      background-color: red;
+      width: 300px;;
   }
 }
