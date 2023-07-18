@@ -1,11 +1,23 @@
 .main {
-  background-color: #ddd3d3;
+  background-color: $color-main;
   display: flex;
   flex-wrap: wrap;
+  justify-items: center;
   flex-direction: row;
-  
+  justify-content: space-between;
     &-figure {
-      background-color: red;
-      width: 300px;;
+      display: flex;
+      background-color: $color-figure;
+      margin: 10px;
+      width: 20%;
+      height: 500px;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-content: space-around;
+      justify-content: space-around;
+      align-items: center;
+      &-img{
+        width: 100%;
+      }
   }
 }

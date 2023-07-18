@@ -42,14 +42,14 @@ const mappedCharacters = (characters) => {
 };
 
 const drawCharacters = (characters) => {
-  const main$$ = document.querySelector('main');
+  const main$$ = document.querySelector("main");
   main$$.innerHTML = "";
   for (const character of characters) {
     let figure$$ = document.createElement("figure");
     figure$$.className = "main-figure";
     figure$$.innerHTML = `
           <h3>${character.name}</h3>
-          <img src=${character.img} alt=${character.name}>
+          <img src=${character.img} alt=${character.name} class="main-figure-img">
       `;
     //const btn$$ = document.createElement("button");
     //btn$$.textContent = "BORRAR";
@@ -64,20 +64,24 @@ const drawCharacters = (characters) => {
 
 //#region Filtro
 
-const drawHeader = (characters) =>{
-  const versions = [-1,150, 550,characters.length-1];
+const drawHeader = (characters) => {
+  const versions = [-1, 150, 550, characters.length - 1];
   const header$$ = document.querySelector("header");
+  const div$$ = document.createElement("div");
+  div$$.className = "header-versions";
   for (let index = 0; index < 3; index++) {
     const btn$$ = document.createElement("button");
-    btn$$.textContent = `MOSTRAR V${index+1}`;
-
+    btn$$.className="header-versions-button"
+    btn$$.textContent = `VERSION V${index + 1}`;
     btn$$.addEventListener("click", () => {
-      drawCharacters(characters.slice(versions[index]+1, versions[index+1]));
+      drawCharacters(
+        characters.slice(versions[index] + 1, versions[index + 1])
+      );
     });
-
-    header$$.appendChild(btn$$);
+    div$$.appendChild(btn$$)
   }
-}
+  header$$.appendChild(div$$);
+};
 
 //#endregion
 
@@ -88,7 +92,7 @@ Funcion inicial donde ponemos todas las llamadas a funciones.
 
 const init = async () => {
   const url = `https://pokeapi.co/api/v2/pokemon`;
-  const characters = await getCharactersRecursive(url);  
+  const characters = await getCharactersRecursive(url);
   drawCharacters(characters.slice(0, 150));
   drawHeader(characters);
 };

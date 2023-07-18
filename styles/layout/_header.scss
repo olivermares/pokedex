@@ -1,3 +1,17 @@
 .header { 
- background-color: purple;
+    background-color: $color-header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    &-versions{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        &-button{
+            margin: 25px;
+            height: 75px;
+            width: 120px;
+
+        }
+    }
 }

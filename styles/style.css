@@ -5,18 +5,44 @@
 }
 
 .header {
-  background-color: purple;
+  background-color: #9ac59e;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.header-versions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.header-versions-button {
+  margin: 25px;
+  height: 75px;
+  width: 120px;
 }
 
 .main {
   background-color: #ddd3d3;
   display: flex;
   flex-wrap: wrap;
+  justify-items: center;
   flex-direction: row;
+  justify-content: space-between;
 }
 .main-figure {
-  background-color: red;
-  width: 300px;
+  display: flex;
+  background-color: #f83f32;
+  margin: 10px;
+  width: 20%;
+  height: 500px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: space-around;
+  justify-content: space-around;
+  align-items: center;
+}
+.main-figure-img {
+  width: 100%;
 }
 
 .footer {
