@@ -71,15 +71,23 @@ const drawHeader = (characters) => {
   div$$.className = "header-versions";
   for (let index = 0; index < 3; index++) {
     const btn$$ = document.createElement("button");
-    btn$$.className="header-versions-button"
+    btn$$.className = "header-versions-button";
     btn$$.textContent = `VERSION V${index + 1}`;
     btn$$.addEventListener("click", () => {
       drawCharacters(
         characters.slice(versions[index] + 1, versions[index + 1])
       );
     });
-    div$$.appendChild(btn$$)
+    div$$.appendChild(btn$$);
   }
+  /*
+  const btn$$ = document.createElement("button");
+  btn$$.className = "header-versions-button";
+  btn$$.textContent = `SUDOKU`;
+  btn$$.addEventListener("click", () => {
+    location.href="./html/sudoku.html";
+  });*/
+  div$$.appendChild(btn$$);
   header$$.appendChild(div$$);
 };
 
